@@ -1,2 +1,2 @@
 # EDUPYTER310
-🐍 Python 3.9 / Jupyter / Thonny
+🐍 Python 3.10 / Jupyter / Thonny
