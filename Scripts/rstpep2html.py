@@ -1,4 +1,4 @@
-#!E:\python-3.10\apps\python.exe
+#!E:\python-3.10.5\apps\python.exe
 
 # $Id: rstpep2html.py 4564 2006-05-21 20:44:42Z wiemann $
 # Author: David Goodger <goodger@python.org>

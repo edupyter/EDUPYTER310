@@ -1,4 +1,4 @@
-#!E:\python-3.10\apps\python.exe
+#!E:\python-3.10.5\apps\python.exe
 
 # $Id: rst2xetex.py 7847 2015-03-17 17:30:47Z milde $
 # Author: Guenter Milde
