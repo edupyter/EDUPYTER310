@@ -1,4 +1,4 @@
-#!E:\python-3.10.6\apps\python.exe
+#!E:\python-3.10.x\apps\python.exe
 
 # Author:
 # Contact: grubert@users.sf.net

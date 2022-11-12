@@ -1,4 +1,4 @@
-#!E:\python-3.10.6\apps\python.exe
+#!E:\python-3.10.x\apps\python.exe
 # :Copyright: © 2015 Günter Milde.
 # :License: Released under the terms of the `2-Clause BSD license`_, in short:
 #

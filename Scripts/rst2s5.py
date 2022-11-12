@@ -1,4 +1,4 @@
-#!E:\python-3.10.6\apps\python.exe
+#!E:\python-3.10.x\apps\python.exe
 
 # $Id: rst2s5.py 8927 2022-01-03 23:50:05Z milde $
 # Author: Chris Liechti <cliechti@gmx.net>
