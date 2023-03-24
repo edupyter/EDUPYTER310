@@ -1,4 +1,4 @@
-#!E:\python-3.10.x\apps\python.exe
+#!C:\Users\laure\Documents\python-3.10.x\apps\python.exe
 
 # $Id: rst2odt.py 8994 2022-01-29 16:28:17Z milde $
 # Author: Dave Kuhlman <dkuhlman@rexx.com>

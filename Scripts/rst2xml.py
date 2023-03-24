@@ -1,4 +1,4 @@
-#!E:\python-3.10.x\apps\python.exe
+#!C:\Users\laure\Documents\python-3.10.x\apps\python.exe
 
 # $Id: rst2xml.py 8927 2022-01-03 23:50:05Z milde $
 # Author: David Goodger <goodger@python.org>

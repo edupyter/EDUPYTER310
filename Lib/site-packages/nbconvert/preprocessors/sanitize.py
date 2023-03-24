@@ -7,6 +7,8 @@ import warnings
 from bleach import ALLOWED_ATTRIBUTES, ALLOWED_TAGS, clean
 from traitlets import Any, Bool, List, Set, Unicode
 
+from .base import Preprocessor
+
 _USE_BLEACH_CSS_SANITIZER = False
 _USE_BLEACH_STYLES = False
 
@@ -21,7 +23,7 @@ try:
 except ImportError:
     try:
         # bleach <5
-        from bleach import ALLOWED_STYLES
+        from bleach import ALLOWED_STYLES  # type:ignore
 
         _USE_BLEACH_CSS_SANITIZER = False
         _USE_BLEACH_STYLES = True
@@ -38,12 +40,11 @@ except ImportError:
         )
 
 
-from .base import Preprocessor
-
 __all__ = ["SanitizeHTML"]
 
 
 class SanitizeHTML(Preprocessor):
+    """A preprocessor to sanitize html."""
 
     # Bleach config.
     attributes = Any(
@@ -108,7 +109,7 @@ class SanitizeHTML(Preprocessor):
           code:
             Sanitize outputs that could result in code execution
         """
-        if cell.cell_type == "raw":
+        if cell.cell_type == "raw":  # noqa
             # Sanitize all raw cells anyway.
             # Only ones with the text/html mimetype should be emitted
             # but erring on the side of safety maybe.
@@ -153,12 +154,12 @@ class SanitizeHTML(Preprocessor):
         """
         Sanitize a string containing raw HTML tags.
         """
-        kwargs = dict(
-            tags=self.tags,
-            attributes=self.attributes,
-            strip=self.strip,
-            strip_comments=self.strip_comments,
-        )
+        kwargs = {
+            "tags": self.tags,
+            "attributes": self.attributes,
+            "strip": self.strip,
+            "strip_comments": self.strip_comments,
+        }
 
         if _USE_BLEACH_CSS_SANITIZER:
             css_sanitizer = CSSSanitizer(allowed_css_properties=self.styles)
@@ -167,3 +168,8 @@ class SanitizeHTML(Preprocessor):
             kwargs.update(styles=self.styles)
 
         return clean(html_str, **kwargs)
+
+
+def _get_default_css_sanitizer():
+    if _USE_BLEACH_CSS_SANITIZER:
+        return CSSSanitizer(allowed_css_properties=ALLOWED_STYLES)

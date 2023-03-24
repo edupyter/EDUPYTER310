@@ -1,4 +1,4 @@
-#!E:\python-3.10.x\apps\python.exe
+#!C:\Users\laure\Documents\python-3.10.x\apps\python.exe
 
 # $Id: rst2latex.py 8956 2022-01-20 10:11:44Z milde $
 # Author: David Goodger <goodger@python.org>

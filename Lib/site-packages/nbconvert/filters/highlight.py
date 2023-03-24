@@ -24,6 +24,8 @@ __all__ = ["Highlight2HTML", "Highlight2Latex"]
 
 
 class Highlight2HTML(NbConvertBase):
+    """Convert highlighted code to html."""
+
     extra_formatter_options = Dict(
         {},
         help="""
@@ -36,6 +38,7 @@ class Highlight2HTML(NbConvertBase):
     )
 
     def __init__(self, pygments_lexer=None, **kwargs):
+        """Initialize the converter."""
         self.pygments_lexer = pygments_lexer or "ipython3"
         super().__init__(**kwargs)
 
@@ -77,6 +80,8 @@ class Highlight2HTML(NbConvertBase):
 
 
 class Highlight2Latex(NbConvertBase):
+    """Convert highlighted code to latex."""
+
     extra_formatter_options = Dict(
         {},
         help="""
@@ -89,6 +94,7 @@ class Highlight2Latex(NbConvertBase):
     )
 
     def __init__(self, pygments_lexer=None, **kwargs):
+        """Initialize the converter."""
         self.pygments_lexer = pygments_lexer or "ipython3"
         super().__init__(**kwargs)
 
@@ -151,7 +157,6 @@ def _pygments_highlight(source, output_formatter, language="ipython", metadata=N
     # If the cell uses a magic extension language,
     # use the magic language instead.
     if language.startswith("ipython") and metadata and "magics_language" in metadata:
-
         language = metadata["magics_language"]
 
     lexer = None

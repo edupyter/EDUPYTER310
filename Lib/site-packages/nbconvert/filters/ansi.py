@@ -165,7 +165,7 @@ def _latexconverter(fg, bg, bold, underline, inverse):
     return starttag, endtag
 
 
-def _ansi2anything(text, converter):
+def _ansi2anything(text, converter):  # noqa
     r"""
     Convert ANSI colors to HTML or LaTeX.
 
@@ -203,7 +203,11 @@ def _ansi2anything(text, converter):
 
         if chunk:
             starttag, endtag = converter(
-                fg + 8 if bold and fg in range(8) else fg, bg, bold, underline, inverse
+                fg + 8 if bold and fg in range(8) else fg,  # type:ignore
+                bg,
+                bold,
+                underline,
+                inverse,
             )
             out.append(starttag)
             out.append(chunk)

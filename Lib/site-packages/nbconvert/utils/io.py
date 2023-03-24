@@ -21,7 +21,7 @@ def unicode_std_stream(stream="stdout"):
 
         unicode_std_stream().write(u'ł@e¶ŧ←')
     """
-    assert stream in ("stdout", "stderr")
+    assert stream in ("stdout", "stderr")  # noqa
     stream = getattr(sys, stream)
 
     try:
@@ -52,7 +52,10 @@ def unicode_stdin_stream():
 
 
 class FormatSafeDict(dict):
+    """Format a dictionary safely."""
+
     def __missing__(self, key):
+        """Handle missing value."""
         return "{" + key + "}"
 
 

@@ -21,7 +21,7 @@ NbConvertBase.display_data_priority
 import os
 from warnings import warn
 
-from ..utils.base import NbConvertBase
+from nbconvert.utils.base import NbConvertBase
 
 __all__ = ["WidgetsDataTypeFilter"]
 
@@ -35,6 +35,7 @@ class WidgetsDataTypeFilter(NbConvertBase):
     there is no widget state available"""
 
     def __init__(self, notebook_metadata=None, resources=None, **kwargs):
+        """Initialize the filter."""
         self.metadata = notebook_metadata
         self.notebook_path = ""
         if resources is not None:
