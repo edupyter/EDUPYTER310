@@ -1,4 +1,4 @@
-#!C:\Users\laure\Documents\python-3.10.x\apps\python.exe
+#!C:\Users\laure\Documents\python-3.10.11\apps\python.exe
 
 # Author:
 # Contact: grubert@users.sf.net
@@ -15,7 +15,7 @@ man page writer to output from ReStructuredText source.
 import locale
 try:
     locale.setlocale(locale.LC_ALL, '')
-except:
+except Exception:
     pass
 
 from docutils.core import publish_cmdline, default_description
